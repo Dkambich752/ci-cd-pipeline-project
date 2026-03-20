@@ -11,7 +11,7 @@ pipeline {
         stage('Run Automated Tests') {
             steps {
                 echo 'Starting Pytest for Telemetry Logic...'
-                // This runs the test you wrote earlier
+                // This command tells Ubuntu to run python test file using pytest
                 sh 'pytest TestTelemetry.py'
             }
         }
