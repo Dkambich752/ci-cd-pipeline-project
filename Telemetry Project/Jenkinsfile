@@ -1,4 +1,5 @@
 pipeline {
+    
     agent any
 
     stages {
@@ -18,6 +19,11 @@ pipeline {
         stage('Quality Gate Results') {
             steps {
                 echo 'Logic Verified. Quality Gate: PASSED.'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Quality Gate Passed! Deploying telemetry logic...'
             }
         }
     }
