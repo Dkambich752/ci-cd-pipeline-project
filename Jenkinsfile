@@ -13,7 +13,7 @@ pipeline {
             steps {
                 echo 'Starting Pytest for Telemetry Logic...'
                 // This command tells Ubuntu to run python test file using pytest
-                sh 'pytest TestTelemetry.py'
+                sh 'pytest TelemetryTest.py'
             }
         }
         stage('Quality Gate Results') {
