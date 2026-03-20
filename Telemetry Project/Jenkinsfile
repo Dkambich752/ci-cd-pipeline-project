@@ -1,0 +1,24 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                // This command pulls your python files from GitHub to the EC2 server
+                checkout scm
+            }
+        }
+        stage('Run Automated Tests') {
+            steps {
+                echo 'Starting Pytest for Telemetry Logic...'
+                // This runs the test you wrote earlier
+                sh 'pytest TestTelemetry.py'
+            }
+        }
+        stage('Quality Gate Results') {
+            steps {
+                echo 'Logic Verified. Quality Gate: PASSED.'
+            }
+        }
+    }
+}
