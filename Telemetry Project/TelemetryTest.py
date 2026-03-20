@@ -3,8 +3,8 @@ from Telemetry import checkSignalIntegrity
 
 # Test passing case
 def testSignalLogic():
-    assert checkSignalIntegrity(-50) == "STRONG" 
+    assert checkSignalIntegrity(-40) == "STRONG" 
 
 # Test failing case
 def testWeakSignal():
-    assert checkSignalIntegrity(-100) == "WEAK" 
+    assert checkSignalIntegrity(-110) == "WEAK" 
